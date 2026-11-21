@@ -52,7 +52,7 @@
 
         - i.e., add a `#` at the beginning).
 
-- For Windows systems, Smart App Control must be turned off.
+- For Windows 11 systems, Smart App Control must be turned off.
 
     - RVX uses unsigned binaries, which Smart App Control blocks.
 
@@ -60,7 +60,6 @@
 
     - Open **Windows Security** → **App & browser control** → **Smart App Control settings**, and select **Off**.
 
-    - Smart App Control exists only on Windows 11. If it is not shown, nothing needs to be done.
 
 - User Account
 

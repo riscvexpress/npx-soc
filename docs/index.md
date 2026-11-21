@@ -1,9 +1,3 @@
----
-hide:
-  - navigation
-  - toc
----
-
 # NPX
 
 **Neuromorphic Processor eXpress**

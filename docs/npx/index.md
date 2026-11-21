@@ -8,10 +8,14 @@ snnForge trains spiking neural networks with [snnTorch](https://snntorch.readthe
 
 -   **[Installation](npx-installation-manual-en.md)**
 
-    Install the snnForge training framework.
+    Installed automatically with RVX. Install it separately only to use snnForge alone.
+
+-   **[Training with snnForge](npx-tutorials-xarvis.md)**
+
+    Train an example SNN with snnForge only, without hardware.
 
 -   **[Tutorials](../tutorials.md)**
 
-    From SNN training to FPGA prototyping, step by step.
+    From "Hello, World" to FPGA prototyping, step by step.
 
 </div>

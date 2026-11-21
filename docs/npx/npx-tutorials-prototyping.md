@@ -1,4 +1,4 @@
-# Tutorial 3: From Spike-Based Learning to FPGA Prototyping
+# Tutorial 2: From Spike-Based Learning to FPGA Prototyping
 
 ## Overview
 
@@ -6,13 +6,11 @@ This tutorial offers step-by-step guidance covering the process from spike-based
 
 ## Prerequisites
 
-- <https://github.com/riscvexpress/npx-xarvis.git>
+- <https://github.com/riscvexpress/xarvis>
 
 - <https://github.com/rvx-etri/npx-tutorials.git>
 
-- [Tutorial 1: Training with snnForge](npx-tutorials-xarvis.md)
-
-- [Tutorial 2: Hello](../rvx-tutorials-hello.md)
+- [Tutorial 1: Hello](../rvx-tutorials-hello.md)
 
 - An RTL simulator with mixed-language support
 
@@ -21,7 +19,7 @@ This tutorial offers step-by-step guidance covering the process from spike-based
 ## Installing the snnForge and NPX Environment
 
 Follow the two tutorials in the Prerequisites to install both the snnForge and NPX.  
-The directories cloned from `npx-xarvis.git` and `npx-tutorials.git` are called `${XARVIS_HOME}` and `#(tutorial dir)`, respectively.  
+The directories cloned from `xarvis` and `npx-tutorials.git` are called `${XARVIS_HOME}` and `#(tutorial dir)`, respectively.  
 In this tutorial, we’ll use `#(tutorial dir)/platform/starc_neugemm` as the platform directory, referred to as `#(platform dir)`.
 
 ## Synchronizing with snnForge

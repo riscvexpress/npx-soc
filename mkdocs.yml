@@ -9,41 +9,13 @@ copyright: Copyright &copy; ETRI, South Korea
 use_directory_urls: false
 
 theme:
-  name: material
-  features:
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - navigation.indexes
-    - search.highlight
-    - content.code.copy
-    - content.tabs.link
-    - toc.follow
-  palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-
-plugins:
-  - search
-  # OFFLINE=true builds a copy that works when opened as local files (file://)
-  - offline:
-      enabled: !ENV [OFFLINE, false]
-
-extra:
-  generator: false   # hide "Made with Material for MkDocs"
+  name: readthedocs
+  navigation_depth: 4
+  collapse_navigation: false
+  sticky_navigation: true
 
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/rtd.css
 
 markdown_extensions:
   - admonition
@@ -64,9 +36,9 @@ nav:
   - Conventions & Tips: conventions.md
   - Tutorials:
       - Overview: tutorials.md
-      - 1. Training with snnForge: npx/npx-tutorials-xarvis.md
-      - 2. Hello: rvx-tutorials-hello.md
-      - 3. Learning to FPGA Prototyping: npx/npx-tutorials-prototyping.md
+      - 1. Hello: rvx-tutorials-hello.md
+      - 2. Learning to FPGA Prototyping: npx/npx-tutorials-prototyping.md
+      - 3. Training with snnForge: npx/npx-tutorials-xarvis.md
   - snnForge:
       - Overview: npx/index.md
       - Installation: npx/npx-installation-manual-en.md

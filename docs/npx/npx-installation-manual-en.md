@@ -1,5 +1,8 @@
 # snnForge: Installation
 
+snnForge is installed automatically when you install RVX.  
+Follow this page only when you use snnForge alone, without RVX (e.g., [Training with snnForge](npx-tutorials-xarvis.md)).
+
 ## Prerequisite
 
 - [Requirements](../requirements.md)
@@ -9,8 +12,14 @@
 ## Cloning the snnForge Repository
 
 ```text
-git clone https://github.com/riscvexpress/npx-xarvis.git
+git clone --recursive https://github.com/riscvexpress/xarvis.git
 ```
+
+> snnForge is in the `snn-forge` submodule, so `--recursive` is required.  
+> If you have already cloned without it, run `git submodule update --init` in #(cloned directory).
+
+On Windows, clone into a short path (e.g., `D:\work`).  
+PyTorch installs files with long paths, and the installation fails if the full path exceeds 260 characters.
 
 ## Python3 Setup for snnForge
 
@@ -57,6 +66,9 @@ make check_python
     cd #(cloned directory)
     make install
     ```
+
+> The PyTorch build (CPU or CUDA) is selected automatically from `nvidia-smi`, and printed as `torch backend: ...`.  
+> To choose it yourself, run e.g. `make install TORCH_BACKEND=cpu`.
 
 ## Setting Up Environment
 

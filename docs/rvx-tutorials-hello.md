@@ -1,8 +1,8 @@
-# Tutorial 2: Hello
+# Tutorial 1: Hello
 
 ## Overview
 
-- This tutorial is intended to verify the most basic functionality of NPX.
+- This tutorial generates an SoC and prints 'Hello, World' using RTL simulation.
 
 ## Prerequisite
 
@@ -12,7 +12,6 @@
 
 - An RTL simulator with mixed-language support (Not provided)
 
-- An FPGA board connected to your computer - [Manual](rvx-fpga-manual-en.md) (Not provided)
 
 ## Installing NPX (Cloning the Repository Included)
 
@@ -26,7 +25,7 @@ It is used in environments where a general-purpose computer cannot be employed b
 To achieve these advantages, both hardware and software for SoCs are co-designed from the outset, focusing on the execution of a limited set of application programs.  
 NPX is a CAD tool for developing both hardware and software for SoC design.  
 Its primary purpose is to run and accelerate C programs on hardware operating at around 100 MHz.  
-For this purpose, this tutorial demonstrates how to run the simplest 'Hello, World' C program on hardware.
+For this purpose, this tutorial demonstrates how to run the simplest 'Hello, World' C program on the SoC using RTL simulation.
 
 ## Running the C Program Using RTL Simulation
 
@@ -38,26 +37,5 @@ make clean
 make syn
 make sim_rtl
 cd sim_rtl
-make hello.all
-```
-
-## Running the C Program Using FPGA Prototyping
-
-```text
-cd #(cloned directory)
-source ./rvx_setup.sh
-cd ./platform/tip_hello
-make clean
-make syn
-make arty-100t // or the FPGA board you have
-cd imp_arty-100t_XXXX // referred to as #(fpga dir)
-make imp
-```
-
-Connect the FPGA board to your computer.
-
-```text
-make program
-make printf
 make hello.all
 ```
