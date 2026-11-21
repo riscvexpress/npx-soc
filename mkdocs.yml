@@ -1,0 +1,116 @@
+site_name: Neuromorphic Processor eXpress
+# Read the Docs sets the canonical URL of each version (e.g. /en/latest/)
+site_url: !ENV [READTHEDOCS_CANONICAL_URL, "https://npx-soc.readthedocs.io/"]
+repo_url: https://github.com/riscvexpress/npx-soc
+site_description: Neuromorphic Processor eXpress (NPX) documentation, including RISC-V eXpress (RVX)
+copyright: Copyright &copy; ETRI, South Korea
+
+# keep the old URLs (e.g. rvx-installation-manual-en-step1.html)
+use_directory_urls: false
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+plugins:
+  - search
+  # OFFLINE=true builds a copy that works when opened as local files (file://)
+  - offline:
+      enabled: !ENV [OFFLINE, false]
+
+extra:
+  generator: false   # hide "Made with Material for MkDocs"
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - Licensing: license.md
+  - Requirements: requirements.md
+  - Conventions & Tips: conventions.md
+  - Tutorials:
+      - Overview: tutorials.md
+      - 1. Training with snnForge: npx/npx-tutorials-xarvis.md
+      - 2. Hello: rvx-tutorials-hello.md
+      - 3. Learning to FPGA Prototyping: npx/npx-tutorials-prototyping.md
+  - snnForge:
+      - Overview: npx/index.md
+      - Installation: npx/npx-installation-manual-en.md
+  - RVX:
+      - Overview: rvx.md
+      - Installation:
+          - Overview: rvx-installation-manual-en.md
+          - Prerequisite: rvx-installation-manual-en-prerequisite.md
+          - Step 1: rvx-installation-manual-en-step1.md
+          - Step 2: rvx-installation-manual-en-step2.md
+          - Miscellaneous: rvx-installation-manual-en-misc.md
+      - Repository Setup: rvx-repository-manual-en.md
+      - CLI Manual:
+          - Overview: rvx-cli-manual-en.md
+          - Platform: rvx-cli-manual-en-platform.md
+          - Application: rvx-cli-manual-en-app.md
+          - RTL Simulation: rvx-cli-manual-en-simulation.md
+          - FPGA Prototyping: rvx-cli-manual-en-fpga.md
+      - FPGA Setup: rvx-fpga-manual-en.md
+      - Software Development:
+          - Overview: rvx-sw-manual-en.md
+          - Caching Region Assignment: rvx-sw-manual-en-caching.md
+          - Data Consistency: rvx-sw-manual-en-consistency.md
+          - Standard Library Porting: rvx-sw-manual-en-stdlib.md
+          - Miscellaneous: rvx-sw-manual-en-misc.md
+      - Feature Manuals:
+          - Overview: rvx-feature-manual-en.md
+          - Examples:
+              - Overview: rvx-tutorials-example.md
+              - test_clock: examples/test_clock.md
+              - test_fileio: examples/test_fileio.md
+              - test_flash: examples/test_flash.md
+              - test_gpio: examples/test_gpio.md
+              - test_ila: examples/test_ila.md
+              - test_image: examples/test_image.md
+              - test_interrupt: examples/test_interrupt.md
+              - test_matrix: examples/test_matrix.md
+              - test_mmio_gen: examples/test_mmio_gen.md
+              - test_profiling: examples/test_profiling.md
+              - test_sim: examples/test_sim.md
+              - test_user_ip: examples/test_user_ip.md
+          - Debugging on FPGA: rvx-feature-manual-en-debugging.md
+          - HDL Code Structure: rvx-feature-manual-en-hdlstructure.md
+          - User IP Integration: rvx-feature-manual-en-userip.md
+  - More:
+      - NPX Bibtex: npx/npx-bibtex.md
+      - RVX Bibtex: rvx-bibtex.md
