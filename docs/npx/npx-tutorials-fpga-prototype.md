@@ -62,13 +62,21 @@ make mnist_app
 > The application is defined in `#(platform dir)/util/npx/app/mnist_app.snn.jsonc`.  
 > The network is trained with snnForge, and the results are written to `#(platform dir)/util/npx/result`.
 
+## Setting Up the Paths
+
+The prebuilt FPGA prototype requires the paths to be set up once before programming the board.
+
+```text
+cd #(fpga dir)
+make path
+```
+
 ## Running an NPX Application on the Genesys2 Board
 
 Connect the FPGA board to your computer.
 
 ```text
 cd #(fpga dir)
-make path
 make program
 make printf
 make profile_npx_app_fpga.all
