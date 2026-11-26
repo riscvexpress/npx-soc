@@ -65,6 +65,7 @@ make imp
 
 ```text
 cd #(fpga dir)
+make path
 make program
 make printf
 make profile_npx_app_fpga.all

@@ -36,8 +36,6 @@ NPX is an integrated framework for developing lightweight neuromorphic SoCs, fro
 **Conference:** International Conference on Field-Programmable Logic and Applications, 2025  
 **URL:** <https://doi.ieeecomputersociety.org/10.1109/FPL68686.2025.00052> · [Bibtex](npx/npx-bibtex.md) · [Poster](npx/materials/npx-poster.pdf)
 
-For the RVX publication, see [RVX](rvx.md#publication).
-
 ## Licensing
 
 NPX is available for non-commercial research use with proper citation. See [Licensing](license.md).
