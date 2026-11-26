@@ -12,13 +12,10 @@ Follow this page only when you use snnForge alone, without RVX (e.g., [Training 
 ## Cloning the snnForge Repository
 
 ```text
-git clone --recursive https://github.com/riscvexpress/xarvis.git
+git clone https://github.com/riscvexpress/snn-forge.git
 ```
 
-> snnForge is in the `snn-forge` submodule, so `--recursive` is required.  
-> If you have already cloned without it, run `git submodule update --init` in #(cloned directory).
-
-On Windows, clone into a short path (e.g., `D:\work`).  
+On Windows, clone into a short path (e.g., `D:\work`).
 PyTorch installs files with long paths, and the installation fails if the full path exceeds 260 characters.
 
 ## Python3 Setup for snnForge
@@ -69,37 +66,3 @@ make check_python
 
 > The PyTorch build (CPU or CUDA) is selected automatically from `nvidia-smi`, and printed as `torch backend: ...`.  
 > To choose it yourself, run e.g. `make install TORCH_BACKEND=cpu`.
-
-## Setting Up Environment
-
-### Instruction
-
-=== "Linux"
-
-    ```text
-    cd #(cloned directory)
-    make config
-    ```
-
-    > Check that the file ./rvx_setup.sh has been created.
-
-    Add the line source #(cloned directory)/rvx_setup.sh to your .bashrc.
-
-    > Be sure to replace #(cloned directory) with the absolute path before adding it.
-
-    To apply the changes to .bashrc, close and reopen the terminal.
-
-    > Now, #(cloned directory) is registered as ${XARVIS_HOME}.
-
-=== "Windows"
-
-    ```text
-    cd #(cloned directory)
-    make config
-    ```
-
-    > The environment variable XARVIS_HOME is set.
-
-    To apply the changes to the environment variable, close and reopen the terminal.
-
-    > Now, #(cloned directory) is registered as ${XARVIS_HOME}.

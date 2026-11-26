@@ -10,7 +10,8 @@ Check which installation process has issues.
 
 ### Objective
 
-Install the Python3 libraries and set up the NPX environment.
+Install the Python3 libraries and set up the NPX environment.  
+snnForge is installed automatically, so it does not need to be installed separately.
 
 ### Instruction
 
@@ -22,6 +23,7 @@ Install the Python3 libraries and set up the NPX environment.
     ```
 
     > The Python3 libraries are installed using pip.  
+    > The NPX modules are downloaded, including snnForge in '#(cloned directory)/snn_forge'.  
     > 'rvx_config_path.mh' is generated.  
     > The udev rules are copied to /etc/udev/rules.d, which may ask for your sudo password.  
     > Check that the file ./rvx_setup.sh has been created.
@@ -42,6 +44,7 @@ Install the Python3 libraries and set up the NPX environment.
     ```
 
     > The Python3 libraries are installed using pip.  
+    > The NPX modules are downloaded, including snnForge in '#(cloned directory)/snn_forge'.  
     > 'rvx_config_path.mh' is generated.  
     > The environment variable RVX_RELEASE_HOME is set.
 

@@ -1,4 +1,4 @@
-# Tutorial 3: Training with snnForge
+# Tutorial 4: Training with snnForge
 
 ## Overview
 
@@ -13,22 +13,22 @@ To run the trained network on hardware, see [Tutorial 2](npx-tutorials-prototypi
 ## Checking Application Files
 
 snnForge uses a configuration file for each application, which defines preprocessing steps, training parameters, and network structures.
-These files are located in `${XARVIS_HOME}/snn-forge/app`, in the `<name>.snn.jsonc` format (JSON with comments).
+These files are located in `#(cloned directory)/app`, in the `<name>.snn.jsonc` format (JSON with comments).
 An example configuration file is `mnist_app.snn.jsonc`.
 
 ## Training an Example Application
 
 ```text
-cd ${XARVIS_HOME}/snn-forge
+cd #(cloned directory)
 make mnist_app
 ```
 
-> The MNIST dataset is downloaded automatically into `${XARVIS_HOME}/dataset` on the first run.
+> The MNIST dataset is downloaded automatically into `#(cloned directory)/dataset` on the first run.
 > Training runs on the CPU by default. To use a GPU, run e.g. `make mnist_app GPU_ID=0`.
 
 ## Checking the Trained Results
 
-The training results will be generated in `${XARVIS_HOME}/snn-forge/result/mnist_app`.
+The training results will be generated in `#(cloned directory)/result/mnist_app`.
 
 - `parameter`: the trained parameters for each epoch, in floating point and quantized
 - `report`: the validation and test accuracy

@@ -38,7 +38,8 @@ nav:
       - Overview: tutorials.md
       - 1. Hello: rvx-tutorials-hello.md
       - 2. Learning to FPGA Prototyping: npx/npx-tutorials-prototyping.md
-      - 3. Training with snnForge: npx/npx-tutorials-xarvis.md
+      - 3. Prebuilt FPGA Prototype: npx/npx-tutorials-fpga-prototype.md
+      - 4. Training with snnForge: npx/npx-tutorials-xarvis.md
   - snnForge:
       - Overview: npx/index.md
       - Installation: npx/npx-installation-manual-en.md

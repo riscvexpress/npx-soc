@@ -6,9 +6,7 @@ This tutorial offers step-by-step guidance covering the process from spike-based
 
 ## Prerequisites
 
-- <https://github.com/riscvexpress/xarvis>
-
-- <https://github.com/rvx-etri/npx-tutorials.git>
+- <https://github.com/riscvexpress/npx-tutorials>
 
 - [Tutorial 1: Hello](../rvx-tutorials-hello.md)
 
@@ -16,20 +14,13 @@ This tutorial offers step-by-step guidance covering the process from spike-based
 
 - A Genesys2 FPGA board connected to your computer - [Manual](../rvx-fpga-manual-en.md)
 
-## Installing the snnForge and NPX Environment
+## Installing NPX
 
-Follow the two tutorials in the Prerequisites to install both the snnForge and NPX.  
-The directories cloned from `xarvis` and `npx-tutorials.git` are called `${XARVIS_HOME}` and `#(tutorial dir)`, respectively.  
-In this tutorial, we’ll use `#(tutorial dir)/platform/starc_neugemm` as the platform directory, referred to as `#(platform dir)`.
+Install NPX with the `npx-tutorials` repository by following [Tutorial 1: Hello](../rvx-tutorials-hello.md).
+snnForge is installed automatically in `#(cloned directory)/snn_forge`, so it does not need to be installed separately.
+In this tutorial, we'll use `#(cloned directory)/platform/starc_neugemm` as the platform directory, referred to as `#(platform dir)`.
 
-## Synchronizing with snnForge
-
-```text
-source #(tutorial dir)/rvx_setup.sh
-source ${XARVIS_HOME}/rvx_setup.sh
-cd #(platform dir)/util/npx
-make setup
-```
+> On Linux, run `source #(cloned directory)/rvx_setup.sh` in every new terminal.
 
 ## Synthesizing the Processor
 
@@ -45,34 +36,41 @@ cd #(platform dir)/util/npx
 make mnist_app
 ```
 
+> The application is defined in `#(platform dir)/util/npx/app/mnist_app.snn.jsonc`.
+> The network is trained with snnForge, and the results are written to `#(platform dir)/util/npx/result`.
+
 ## Running an NPX Application via RTL Simulation
 
 Not recommended because it takes a long time.
 
 ```text
-source #(tutorial dir)/rvx_setup.sh
 cd #(platform dir)
 make sim_rtl
 cd sim_rtl
-make test_npx_app.all
+make profile_npx_app_fpga.all
 ```
 
 ## Prototyping the Processor on the Genesys2 Board
 
 ```text
-source #(tutorial dir)/rvx_setup.sh
 cd #(platform dir)
 make genesys2 // replace with your board name
 cd imp_genesys2_YYYY-MM-DD // referred to as #(fpga dir)
 make imp
 ```
 
+> `make fpga_list` in #(platform dir) shows the supported boards.
+
 ## Running an NPX Application on the Genesys2 Board
 
 ```text
-source #(tutorial dir)/rvx_setup.sh
 cd #(fpga dir)
 make program
 make printf
-make test_npx_app.all
+make profile_npx_app_fpga.all
 ```
+
+## Using the RVX-EB Board
+
+If you have an RVX-EB board, use `genesys2-eb` instead of `genesys2` in the steps above (e.g., `make genesys2-eb`).  
+See [Genesys2 + RVX-EB](../rvx-fpga-manual-en.md#genesys2-rvx-eb) in the FPGA Setup Manual.

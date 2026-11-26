@@ -6,18 +6,43 @@
 
 ## Prerequisite
 
-- <https://github.com/rvx-etri/rvx-tutorials.git>
+- <https://github.com/riscvexpress/npx-tutorials>
 
-- [Installation Manual](rvx-installation-manual-en.md)
+- [Requirements](requirements.md)
+
+- Git and make: [Install - Prerequisite](rvx-installation-manual-en-prerequisite.md)
 
 - An RTL simulator with mixed-language support (Not provided)
 
+## Installing NPX
 
-## Installing NPX (Cloning the Repository Included)
+Clone the tutorial repository and install NPX in it.
 
-Install NPX by following the instructions in the installation manual, using the tutorial repository for cloning.
+```text
+git clone https://github.com/riscvexpress/npx-tutorials.git
+cd npx-tutorials
+git submodule init
+git submodule update
+make setup_python
+make check_python
+make install
+```
 
-## Understating SoCs
+> The cloned directory is referred to as #(cloned directory).  
+> For details of each step, see the [Installation Manual](rvx-installation-manual-en.md).
+
+If `make install` fails with `No rule to make target 'install'`, the submodules are missing.  
+Run `git submodule update --init` and try again.
+
+=== "Linux"
+
+    Run `source #(cloned directory)/rvx_setup.sh` in every new terminal.
+
+=== "Windows"
+
+    Close and reopen the terminal, since the environment variables are registered with `setx`.
+
+## Understanding SoCs
 
 Typically, an SoC means a chip that integrates a small computer within itself.  
 Simply put, it is a chip that runs your computer program.  
@@ -29,13 +54,27 @@ For this purpose, this tutorial demonstrates how to run the simplest 'Hello, Wor
 
 ## Running the C Program Using RTL Simulation
 
+This tutorial uses the `starc_neugemm` platform, the NeuGEMM SoC.
+
 ```text
-cd #(cloned directory)
-source ./rvx_setup.sh
-cd ./platform/tip_hello
+cd #(cloned directory)/platform/starc_neugemm
 make clean
 make syn
 make sim_rtl
 cd sim_rtl
 make hello.all
+```
+
+> The C program is in `#(cloned directory)/platform/starc_neugemm/app/hello/src/main.c`.
+
+At the end of the simulation, the following is printed.
+
+```text
+[INFO/SYSTEM] start SIM@RTL
+Hello World!
+
+<SIM:INFO>  1 cores have finished @             4454520 ns
+
+
+[INFO/SYSTEM] end
 ```
